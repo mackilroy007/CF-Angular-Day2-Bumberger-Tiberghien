@@ -1,0 +1,36 @@
+<!-- display employees -->
+
+<h2 class="text-center">Our employees are here to help!</h2>
+
+<div class="row d-flex justify-content-center">
+    <div *ngFor="let employee of employees">
+        <div class="row mx-auto row-cols-1 row-cols-sm-4 m-1">
+            <div class="card" style="width: 20rem;">
+                <img src={{employee.img}} class="card-img-top" alt="employee picture">
+                <div class="card-body">
+                    <p class="card-text">This is {{employee.name}}.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+
+<!-- question form -->
+<form [formGroup]="info" (ngSubmit)="onSubmit()">
+    <p>Please contact us for more information</p>
+    <div class=" row">
+        <label class="mx-3 my-1">
+            Name:
+            <input type="text" formControlName="Name">
+        </label>
+
+        <label class="mx-3 my-1">
+            Email:
+            <input type="text" formControlName="email">
+        </label>
+
+        <input type="submit" class="btn btn-primary " value="Submit">
+    </div>
+</form>

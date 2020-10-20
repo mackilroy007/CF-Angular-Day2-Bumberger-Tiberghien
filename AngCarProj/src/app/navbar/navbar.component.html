@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="navbar-collapse collapse w-90 order-1 order-md-0 dual-collapse2">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link active" routerLink="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link active" routerLink="/contact">Contact Us <span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+    </div>
+    <div class="mx-auto order-0">
+        <ng-template [ngIf]="clickCounter >= 200" [ngIfElse]="none">
+            <a class="nav-link justify-content-center text-danger"><b>VIP</b></a>
+        </ng-template>
+        <ng-template #none>
+            <a class="nav-link active text-light">{{ clickCounter }}€ Donated</a>
+        </ng-template>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+    <div class="navbar-collapse collapse w-90 order-3 dual-collapse2">
+        <ul class="navbar-nav ml-auto">
+
+            <!-- donate button -->
+            <li class="nav-item">
+                <a><span (click)="countClick()" class="btn btn-danger"> Donate 10€</span></a>
+            </li>
+
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="#">pLs HeLp</a>
+            </li> -->
+
+        </ul>
+    </div>
+</nav>
