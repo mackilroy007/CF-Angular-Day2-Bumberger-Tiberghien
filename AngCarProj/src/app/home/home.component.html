@@ -1,8 +1,8 @@
 <!-- car card img -->
 
 <div class="row my-4 d-flex justify-content-center">
-    <div class="row col-md-6  my-2" *ngFor="let car of cars">
-        <div class="card mx-auto" style="width: 20rem;">
+    <div class="row col-md-5  my-2 mx-2" *ngFor="let car of cars">
+        <div class="card mx-auto" style="max-width: 70rem;">
             <img src={{car.img}} class="card-img-top" alt={{car.model}}>
             <div class="card-body">
                 <p class="card-text">The starting price for a {{car.model}} lies at {{car.price}}$.</p>
